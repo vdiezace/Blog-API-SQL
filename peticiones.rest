@@ -1,0 +1,23 @@
+@host = http://localhost:3000/
+
+##### API AUTHORS ######
+GET {{host}}api/authors
+
+###
+GET {{host}}/api/authors/1
+
+###
+POST {{host}}/api/authors
+
+
+##### API POSTS ######
+GET {{host}}/api/posts
+
+#####
+GET {{host}}/api/posts/2
+
+####
+GET {{host}}/api/posts/authors/1
+
+####
+POST {{host}}/api/posts
