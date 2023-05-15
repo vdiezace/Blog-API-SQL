@@ -13,7 +13,7 @@
 -GET api/posts
     - devuelve un array con todos los posts
 -GET /api/posts/IDPOSTS
-    -devuelve un post con los datos del autor
+    -devuelve un post con todos sus datos
 -GET /api/posts/authors/IDAUTOR
     -devuelve todos los post de su autor
 -POST api/posts

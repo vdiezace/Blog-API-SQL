@@ -11,7 +11,19 @@ router.get("/", async (req, res) => {
     res.json({ fatal: error.message });
   }
 });
+
 // GET /api/posts/IDPOSTS
+router.get("/:postsId", async (req, res) => {
+  //res.json("Pasa por aqui?");
+  //res.json(req.params);
+  const { postsId } = req.params;
+  try {
+    const result = await getById(postsId);
+    res.json(result[0]);
+  } catch (error) {
+    res.json({ fatal: error.message });
+  }
+});
 
 // GET /api/posts/authors/IDAUTOR
 
