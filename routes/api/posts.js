@@ -1,9 +1,15 @@
-const { getAll, create, getById } = require("../../model/posts.model");
+const {
+  getAll,
+  create,
+  getById,
+  getByAuthor,
+} = require("../../model/posts.model");
 
 const router = require("express").Router();
 
 // GET api/posts
 router.get("/", async (req, res) => {
+  // res.json("pasa por el getAll");
   try {
     const [result] = await getAll();
     res.json(result);
@@ -26,6 +32,16 @@ router.get("/:postsId", async (req, res) => {
 });
 
 // GET /api/posts/authors/IDAUTOR
+router.get("/authors/:authorsId", async (req, res) => {
+  //res.json("Pasa por el getByAuthorId");
+  const { authorsId } = req.params;
+  try {
+    const result = await getByAuthor(authorsId);
+    res.json(result[0]);
+  } catch (error) {
+    res.json({ fatal: error.message });
+  }
+});
 
 // POST api/posts
 router.post("/", async (req, res) => {
