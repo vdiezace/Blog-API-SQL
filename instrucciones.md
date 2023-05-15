@@ -12,9 +12,9 @@
 # API posts
 -GET api/posts
     - devuelve un array con todos los posts
-GET /api/posts/IDPOSTS
+-GET /api/posts/IDPOSTS
     -devuelve un post con los datos del autor
-GET /api/posts/authors/IDAUTOR
+-GET /api/posts/authors/IDAUTOR
     -devuelve todos los post de su autor
 -POST api/posts
     - Creamos un posts

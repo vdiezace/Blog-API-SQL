@@ -16,7 +16,6 @@ Content-Type: application/json
     "image": "https://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg"
 }
 
-
 ##### API POSTS ######
 GET {{host}}/api/posts
 
@@ -28,3 +27,12 @@ GET {{host}}/api/posts/authors/1
 
 ####
 POST {{host}}/api/posts
+Content-Type: application/json
+
+{
+    "title": "Post 1",
+    "description": "Post 1 content",
+    "created_at": "2023-05-03",
+    "category": "Sports",
+    "authors_id": "2"
+}
