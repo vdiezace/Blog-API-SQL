@@ -8,6 +8,12 @@ const app = require("../app");
 const debug = require("debug")("act9-blog:server");
 const http = require("http");
 
+//Config .env
+require("dotenv").config();
+
+// Config BD
+require("../config/db");
+
 /**
  * Get port from environment and store in Express.
  */

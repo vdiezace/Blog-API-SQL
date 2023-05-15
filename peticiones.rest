@@ -1,13 +1,20 @@
-@host = http://localhost:3000/
+@host = http://localhost:3000
 
 ##### API AUTHORS ######
-GET {{host}}api/authors
+GET {{host}}/api/authors
 
 ###
 GET {{host}}/api/authors/1
 
 ###
 POST {{host}}/api/authors
+Content-Type: application/json
+
+{
+    "name": "Lucia",
+    "email": "lucia6@gmail.com",
+    "image": "https://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg"
+}
 
 
 ##### API POSTS ######
