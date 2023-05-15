@@ -18,8 +18,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET /api/posts/IDPOSTS
-router.get("/:postsId", async (req, res) => {
+// GET /api/posts/authors
+router.get("/authors", async (req, res) => {
   //res.json("Pasa por aqui?");
   //res.json(req.params);
   const { postsId } = req.params;
@@ -32,7 +32,7 @@ router.get("/:postsId", async (req, res) => {
 });
 
 // GET /api/posts/authors/IDAUTOR
-router.get("/authors/:authorsId", async (req, res) => {
+router.get("/authors", async (req, res) => {
   //res.json("Pasa por el getByAuthorId");
   const { authorsId } = req.params;
   try {

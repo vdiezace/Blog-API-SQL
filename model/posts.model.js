@@ -3,7 +3,10 @@ const getAll = () => {
 };
 
 const getById = (postsId) => {
-  return db.query("select * from posts where id = ?", [postsId]);
+  return db.query(
+    "select * from posts AS p JOIN authors AS a ON p.authors_id = a.id",
+    [postsId]
+  );
 };
 
 const getByAuthor = (authorId) => {
