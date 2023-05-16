@@ -2,7 +2,8 @@ const {
   getAll,
   create,
   getById,
-  getByAuthor,
+  getByAuthorId,
+  getByPost,
 } = require("../../model/posts.model");
 
 const router = require("express").Router();
@@ -24,19 +25,22 @@ router.get("/authors", async (req, res) => {
   //res.json(req.params);
   const { postsId } = req.params;
   try {
-    const result = await getById(postsId);
-    res.json(result[0]);
+    const [result] = await getByPost(postsId);
+    res.json(result);
   } catch (error) {
     res.json({ fatal: error.message });
   }
 });
 
 // GET /api/posts/authors/IDAUTOR
-router.get("/authors", async (req, res) => {
+router.get("/authors/:authorsId", async (req, res) => {
   //res.json("Pasa por el getByAuthorId");
   const { authorsId } = req.params;
   try {
-    const result = await getByAuthor(authorsId);
+    const result = await getByAuthorId(authorsId);
+    if (result.length === 0) {
+      return res.json({ fatal: "No existe ningún post con este id de autor" });
+    }
     res.json(result[0]);
   } catch (error) {
     res.json({ fatal: error.message });

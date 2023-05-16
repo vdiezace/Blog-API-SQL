@@ -19,7 +19,7 @@
     - Los datos del nuevo autor llegan en el BODY
     - devuelve los datos del nuevo posts insertado
     - 
-- -GET /api/authors/posts
+- -GET /api/posts/authors
     -devuelve los autores con todos sus datos y los datos del posts
 
 i.e. json
